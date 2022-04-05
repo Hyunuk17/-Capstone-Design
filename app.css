@@ -1,0 +1,160 @@
+:root {
+  --purple-color: purple;
+  --white-color: white;
+  --lightgray-color: #777;
+
+  --padding: 12px;
+  --large-padding: 24px;
+}
+
+* {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 360px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+body {
+}
+.main1 {
+  padding: var(--large-padding);
+  background: linear-gradient(
+    135deg,
+    rgba(247, 202, 201, 1) 0%,
+    rgba(146, 168, 209, 1) 100%
+  );
+  color: var(--white-color);
+}
+
+h3,
+h1 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: var(--padding);
+}
+
+.main1 .card {
+  padding: var(--large-padding);
+  list-style: none;
+  background-color: var(--white-color);
+  width: 280px;
+  height: 160px;
+  margin: 0 auto;
+  margin-bottom: var(--padding);
+  border-radius: 20px;
+
+  color: black;
+}
+
+.main1 .card > li {
+  color: var(--lightgray-color);
+  width: 100%;
+  display: flex;
+}
+.main1 .card > li > h3 {
+  font-size: large;
+  text-align: left;
+
+  flex: 1;
+}
+.main1 .card > li > h1 {
+  font-size: medium;
+  text-align: right;
+  flex: 1;
+}
+
+.main2 {
+  padding: var(--large-padding);
+  background-color: white;
+  color: var(--lightgray-color);
+  border: 1px solid rgba(146, 168, 209, 1);
+  border-top: none;
+}
+.main2 div {
+  width: 100%;
+}
+.main2 .select,
+.main2 .select2 {
+  padding: var(--padding);
+  position: relative;
+}
+
+.main2 .choice,
+.main2 .choice2 {
+  width: 100%;
+  height: 50px;
+  border-style: none;
+  border-radius: 10px;
+  padding: var(--large-padding);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white-color);
+  box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.2);
+}
+
+.main2 .choice > span,
+.main2 .choice2 > span {
+  width: 100%;
+}
+.main2 .choice > i,
+.main2 .choice2 > i {
+  flex: 1;
+  width: 100%;
+  color: black;
+}
+
+.main2 .select .optionList,
+.main2 .select2 .optionList {
+  margin-top: var(--padding);
+  width: 100%;
+  list-style: none;
+  display: none;
+  background: var(--white-color);
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+  vertical-align: middle;
+}
+
+.select.active .optionList,
+.select2.active .optionList {
+  display: block;
+  border-radius: 10px;
+}
+
+.main2 .select .option,
+.main2 .select2 .option2 {
+  padding: var(--large-padding);
+  display: flex;
+  flex: 1;
+
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.main2 .select .option:hover,
+.main2 .select2 .option2:hover {
+  color: black;
+}
+
+.main2 .select .option:last-child,
+.main2 .select2 .option2:last-child {
+  border-bottom: 0 none;
+}
+
+.main2 .pay {
+  margin: var(--large-padding) 0;
+  width: 100%;
+  height: 50px;
+  background-color: green;
+  border-radius: 50px;
+  border-style: none;
+  color: var(--white-color);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.main2 .pay:hover {
+  opacity: 0.6;
+}
