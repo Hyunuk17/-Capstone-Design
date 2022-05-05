@@ -9,9 +9,9 @@
 
 * {
   padding: 0;
-  margin: 0 auto;
+  margin: 0;
   box-sizing: border-box;
-  width: 360px;
+
   font-family: "Noto Sans KR", sans-serif;
 }
 body {
@@ -24,6 +24,7 @@ body {
     rgba(146, 168, 209, 1) 100%
   );
   color: var(--white-color);
+  margin-bottom: var(--padding);
 }
 
 h3,
@@ -62,25 +63,36 @@ h1 {
   text-align: right;
   flex: 1;
 }
+.main1 .card > li > h1 > i {
+  padding-left: 4px;
+}
+.main1 .card > li > h1 > i:hover {
+  opacity: 0.6;
+}
 
 .main2 {
+  width: 360px;
+  height: 100%;
+  margin: 0 auto;
   padding: var(--large-padding);
   background-color: white;
   color: var(--lightgray-color);
-  border: 1px solid rgba(146, 168, 209, 1);
+
   border-top: none;
 }
 .main2 div {
   width: 100%;
 }
 .main2 .select,
-.main2 .select2 {
+.main2 .select2,
+.bModal .bSelect {
   padding: var(--padding);
   position: relative;
 }
 
 .main2 .choice,
-.main2 .choice2 {
+.main2 .choice2,
+.bModal .bChoice {
   width: 100%;
   height: 50px;
   border-style: none;
@@ -106,7 +118,8 @@ h1 {
 }
 
 .main2 .select .optionList,
-.main2 .select2 .optionList {
+.main2 .select2 .optionList,
+.bModal .bSelect .optionList {
   margin-top: var(--padding);
   width: 100%;
   list-style: none;
@@ -117,29 +130,35 @@ h1 {
 }
 
 .select.active .optionList,
-.select2.active .optionList {
+.select2.active .optionList,
+.bSelect.active .optionList {
   display: block;
   border-radius: 10px;
 }
 
 .main2 .select .option,
-.main2 .select2 .option2 {
+.main2 .select2 .option2,
+.bModal .option3 {
+  color: var(--lightgray-color);
   padding: var(--large-padding);
   display: flex;
   flex: 1;
-
   align-items: center;
   width: 100%;
   height: 50px;
+  background-color: var(--white-color);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .main2 .select .option:hover,
-.main2 .select2 .option2:hover {
+.main2 .select2 .option2:hover,
+.option3:hover {
   color: black;
 }
 
 .main2 .select .option:last-child,
-.main2 .select2 .option2:last-child {
+.main2 .select2 .option2:last-child,
+.option3:last-child {
   border-bottom: 0 none;
 }
 
@@ -147,7 +166,7 @@ h1 {
   margin: var(--large-padding) 0;
   width: 100%;
   height: 50px;
-  background-color: green;
+  background-color: #009a7d;
   border-radius: 50px;
   border-style: none;
   color: var(--white-color);
@@ -157,4 +176,70 @@ h1 {
 
 .main2 .pay:hover {
   opacity: 0.6;
+}
+
+.modal,
+.bModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.modal .confirm,
+.bModal .bConfirm {
+  background-color: var(--white-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  width: 250px;
+  color: var(--lightgray-color);
+  padding: var(--large-padding);
+}
+
+.modal h2,
+.bModal h2 {
+  width: 100%;
+  display: block;
+  /*border-bottom: 1px solid var(--lightgray-color);*/
+  font-size: 16px;
+}
+.modal h3,
+.bModal h3 {
+  width: 100%;
+  padding: var(--large-padding);
+  /*border-bottom: 1px solid var(--lightgray-color);*/
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.modal ul,
+.bModal ul {
+  display: flex;
+  justify-content: space-around;
+  font-size: 16px;
+}
+
+.modal li,
+.bModal li {
+  background-color: var(--lightgray-color);
+  width: 80px;
+  height: 30px;
+  color: var(--white-color);
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+.modal li:hover,
+.bModal .bcon > li:hover {
+  background-color: #009a7d;
 }
