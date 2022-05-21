@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="app_signup.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet">
   <script src="https://kit.fontawesome.com/4a70d94605.js" crossorigin="anonymous"></script>
-  <script src="app.js" defer></script>
+  <script src="app_signup.js" defer></script>
   <title>Application</title>
 </head>
 
@@ -16,8 +16,7 @@
   <!--Section-->
   <section class="main1">
     <h3 class="title">title</h3>
-    <h1>Payment Method</h1>
-    <ul class="card">
+    <!--<ul class="card">
       <li>
         <h3>ID : </h3>
         <h1 class="id">ABCD123<i class="fa-solid fa-pen"></i></h1>
@@ -26,12 +25,14 @@
         <h3>Balance : </h3>
         <h1 class="">30,000<i class="fa-solid fa-circle-plus balance" onclick="balance()"></i></h1>
       </li>
-    </ul>
+    </ul>-->
   </section>
 
   <!--Section-->
   <section class="main2">
-    <div class="location">
+    <!--회원가입-->
+    <h1>Sign Up</h1>
+    <!-- <div class="location">
       <span>Location</span>
       <div class="select">
         <button class="choice"><span>선택하기</span><i class="fa-solid fa-sort-down"></i></button>
@@ -56,7 +57,7 @@
         </ul>
       </div>
     </div>
-
+  -->
 
     <!--    <div class="payment">
       <span>Payment</span>
@@ -65,13 +66,21 @@
         <li value="나">나</li>
       </ul>
     </div>-->
-    <button class="pay" onclick="pay()">Pay</button>
+    <!--footer-->
+    <footer>
+      <input type="text" class="ID" placeholder="ID">
+      <input type="text" class="ID" placeholder="PW">
+      <input type="text" class="ID" placeholder="ACCOUNT">
+    </footer>
+
+
+    <button class="pay" onclick="pay()">Sign Up</button>
   </section>
 
   <!--Modal-->
   <div class="modal">
     <div class="confirm">
-      <h2>결제하시겠습니까?</h2>
+      <h2>등록하시겠습니까?</h2>
       <h3>환불할 수 없습니다.</h3>
       <ul class="">
         <li class="yes" onclick="yes(this)">Confirm</li>
@@ -81,7 +90,7 @@
   </div>
 
 
-  <!--Balance Modal-->
+  <!--Balance Modal
   <div class="bModal">
     <div class="bConfirm">
       <h2>충전할 금액을 선택하세요</h2>
@@ -99,11 +108,15 @@
         <li class="no" onclick="no(this)">Cancel</li>
       </ul>
     </div>
-  </div>
+  </div>-->
 
 
-  <!--footer-->
-  <footer></footer>
+  <!--footer
+  <footer>
+    <input type="text" class="ID" placeholder="ID">
+    <input type="text" class="ID" placeholder="PW">
+    <input type="text" class="ID" placeholder="ACCOUNT">
+  </footer>-->
 </body>
 
 </html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="signup.css">
+  <script src="https://kit.fontawesome.com/4a70d94605.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="signup.js" defer></script>
+  <title>Sign Up</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="left">
+      <h1>TITLE / LOGO</h1>
+      <p>회원가입 하시겠습니까?</p>
+      <p>회원가입에 필요한 정보를 입력해주세요</p>
+      <p>수집된 개인정보는 사적으로 활용되지 않습니다</p>
+      <button class="goback" id="goback">Go back to Home <i class="fa-regular fa-circle-right"></i></button>
+      <!--//메인에서 따옴-->
+      <p class="underline">Fax/Tel. 02 - 223 -2912~5</p>
+    </div>
+
+    <div class="right">
+      <h1>SIGN UP</h1>
+      <!--form-->
+      <form action="" method="post">
+        <div>
+          <label for="name">NAME*</label>
+          <input type="text" id="name" placeholder="이름을 입력해주세요." required>
+        </div>
+        <!--**생년월일 박스/jquery datepicker로 수정가능-->
+        <div>
+          <label for="birthday">BIRTHDAY*</label>
+          <input type="date" id="birthday" required>
+        </div>
+        <div>
+          <label for="EMAIL">E-MAIL*</label>
+          <input type="text" id="EMAIL" placeholder="E-mail@abc.com" required>
+        </div>
+        <div>
+          <label for="ID">ID*</label>
+          <input type="text" id="ID" placeholder="ID를 입력해주세요." required>
+        </div>
+        <div>
+          <label for="password">PASSWORD*</label>
+          <input type="password" id="password" placeholder="비밀번호를 입력해주세요." required>
+        </div>
+        <div>
+          <label for="TEL">TEL*</label>
+          <input type="text" id="TEL" placeholder="010 - " required>
+        </div>
+        <div class="FP">
+          <input type="checkbox" id="checkbox" class="checkbox" required>
+          <label for="checkbox" class="check">I accept all terms & condition</label>
+          <!--개인정보 처리방침에 따른 개인정보 수집 및 활용에 동의합니다-->
+        </div>
+        <input type="submit" value="SIGN UP" class="btn">
+        <div class="signup">Already have an ID?
+          <a href="login.html">Login</a>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</body>
+
+</html>
