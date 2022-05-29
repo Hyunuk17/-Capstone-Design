@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="history.css">
+  <script src="https://kit.fontawesome.com/4a70d94605.js" crossorigin="anonymous"></script>
+  <script src="history.js" defer></script>
+
+  <title>MyPage</title>
+</head>
+
+<body>
+  <!--로그인 안되어 있으면 못 들어옴-->
+
+  <!--Section 1 : title-->
+  <header>
+    <h1>
+      <i class="fa-solid fa-car-on"></i>
+      Title
+    </h1>
+    <div class="login">
+      <a href="mypage.html"><i class="fa-solid fa-user"></i></a>
+      <!--로그아웃php로 연결해서 로그아웃 성공하면 main.html로 location-->
+      <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    </div>
+  </header>
+
+  <!--Section2 : My Page-->
+  <section>
+    <h1 class="maintitle">My Page</h1>
+    <div class="container">
+      <nav class="nav">
+        <h3><i class="fa-solid fa-user"></i>//ID//님?</h3>
+        <ul>
+          <li>
+            <i class="fa-solid fa-caret-right"></i>
+            <a href="mypage.html">회원정보</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-caret-right"></i>
+            <a href="history.html" class="now">이용내역</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-caret-right"></i>
+            <a href="chargePoint.html">충전하기</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="cont">
+        <h1>이용내역</h1>
+        <div>
+          <div class="user">
+            <h2>이름표시//Username : </h2>
+            <h3>Balance</h3>
+            <h1>잔액표시//50,000<span>원</span></h1>
+            <button onclick="location='chargePoint.html'">충전하기</button>
+          </div>
+          <h3 class="list">이용내역</h3>
+
+          <ul class="history">
+
+            <!--이용내역이 없으면 출력 아니면 display:none;-->
+            <li class="none">
+              이용내역이 없습니다. //display:none;
+            </li>
+            <!--DB에서 기록 가져와서 출력-->
+            <!--최근이 위로 올라오도록, 충전은(충전한 전화번호) 파랑색, 사용은(사용한 기기no) 빨간색(value'_minus'추가로 식별)-->
+            <li>
+              <div>
+                <p>5/25/2022 //최근이 상단</p>
+                <p>Sign //충전('+'), 사용('-')</p>
+              </div>
+              <div>
+                <p>Location//serial number?</p>
+                <p class="value">20,000<span>원</span></p>
+              </div>
+            </li>
+            <!--충전 예시-->
+            <li>
+              <div>
+                <p>5/27/2022</p>
+                <p>충전</p>
+              </div>
+              <div>
+                <p>Tel: 010-123-456</p>
+                <p class="value">20,000<span>원</span></p>
+              </div>
+            </li>
+            <!--사용 예시-->
+            <li>
+              <div>
+                <p>5/25/2022</p>
+                <p>사용</p>
+              </div>
+              <div>
+                <p>예시1: 지역1 no.456</p>
+                <p class="value_minus">20,000<span>원</span></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!--footer: 본문 받으면 맞춰서 수정-->
+  <footer>
+    <div>Title/Logo</div>
+    <div>
+      <p>copyright is ...</p>
+      <p>Fax/Tel. 02 - 223 -2912~5</p>
+    </div>
+  </footer>
+
+
+
+
+</body>
+
+</html>

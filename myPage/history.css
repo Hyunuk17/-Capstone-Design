@@ -1,0 +1,226 @@
+:root {
+  --white-color: white;
+  --blue-color: #2f7af4;
+  --gray-color: #a4a4a4;
+  --lightgray-color: lightgray;
+  --text-color: #777;
+  --black-color: black;
+  --red-color: red;
+  --padding: 12px;
+  --large-padding: 24px;
+
+  --font-large: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: var(--font-large);
+}
+header {
+  background-color: var(--text-color);
+
+  position: relative;
+  color: var(--white-color);
+  height: 200px;
+  text-align: center;
+}
+header > h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+header .login {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: var(--padding) var(--large-padding);
+}
+header .login a {
+  color: var(--white-color);
+  text-decoration: none;
+}
+header .login i {
+  padding-left: var(--padding);
+}
+
+section {
+  width: 1048px;
+  height: 100%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.maintitle {
+  border-bottom: 1px solid var(--gray-color);
+  padding: var(--large-padding);
+}
+.container {
+  display: flex;
+  padding: var(--large-padding);
+}
+
+nav {
+  width: 200px;
+}
+
+nav > h3 {
+  color: var(--white-color);
+  padding: var(--padding);
+  background-color: var(--blue-color);
+  border: 1px solid var(--lightgray-color);
+}
+nav > h3 > i {
+  padding-right: 10px;
+}
+
+nav > ul > li {
+  padding: var(--padding);
+  list-style: none;
+  border: 1px solid var(--lightgray-color);
+  color: var(--text-color);
+}
+nav > ul > li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding-left: var(--padding);
+}
+nav > ul > li a:hover {
+  color: var(--blue-color);
+}
+nav .now {
+  color: var(--blue-color);
+}
+
+.cont {
+  width: 800px;
+  padding: 0 var(--large-padding);
+}
+
+.cont > h1 {
+  padding: var(--padding) 0;
+  border-bottom: 1px solid var(--gray-color);
+}
+
+.cont > div {
+  color: var(--text-color);
+}
+
+.user {
+  width: 400px;
+  height: 250px;
+  margin: 40px auto;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  padding: var(--padding);
+  border-radius: 10px;
+}
+
+.user > h2 {
+  margin-top: var(--padding);
+  border-bottom: 1px solid var(--white-color);
+}
+.user > h3 {
+  margin-top: var(--large-padding);
+  font-size: medium;
+  text-align: center;
+}
+.user > h1 {
+  text-align: center;
+  font-size: xx-large;
+  margin-bottom: 20px;
+}
+.user > h1 > span {
+  font-size: x-large;
+}
+.user > button {
+  display: block;
+  width: 100px;
+  height: 40px;
+  margin: auto;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
+}
+.user > button:hover {
+  filter: brightness(85%);
+}
+
+.list {
+  width: 700px;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: var(--padding);
+  font-size: x-large;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.history li {
+  width: 700px;
+  height: 100px;
+  margin: 0 auto;
+  padding: var(--padding);
+  list-style: none;
+  font-weight: bold;
+  margin-top: 20px;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+  background-color: var(--white-color);
+}
+.history li:hover {
+  transform: scale(1.05); /*없애는게 나을지도*/
+}
+.none {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.history li div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.history li > :last-child {
+  margin-top: var(--large-padding);
+  font-size: x-large;
+}
+.value {
+  color: var(--blue-color);
+  font-weight: bold;
+}
+
+/*sign이 음수면(출금이면) value RED color*/
+.value_minus {
+  color: var(--red-color);
+  font-weight: bold;
+}
+.history li > :last-child > p > span {
+  font-size: large;
+}
+footer {
+  display: flex;
+  background: #1f1f1f;
+  padding: 50px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer > div:first-child {
+  flex: 3;
+  text-align: center;
+  color: #fff;
+}
+
+footer > div:last-child {
+  flex: 9;
+  color: #fff;
+}

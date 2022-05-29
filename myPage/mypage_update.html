@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="mypage_update.css">
+  <script src="https://kit.fontawesome.com/4a70d94605.js" crossorigin="anonymous"></script>
+
+  <title>MyPage</title>
+</head>
+
+<body>
+  <!--로그인 안되어 있으면 못 들어옴-->
+
+  <!--Section 1 : title-->
+  <header>
+    <h1>
+      <i class="fa-solid fa-car-on"></i>
+      Title
+    </h1>
+    <div class="login">
+      <a href="mypage.html"><i class="fa-solid fa-user"></i></a>
+      <!--로그아웃php로 연결해서 로그아웃 성공하면 main.html로 location-->
+      <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    </div>
+  </header>
+
+  <!--Section2 : My Page-->
+  <section>
+    <h1 class="maintitle">My Page</h1>
+    <div class="container">
+      <nav class="nav">
+        <h3>//ID//님</h3>
+        <ul>
+          <li>
+            <i class="fa-solid fa-caret-right"></i>
+            <a href="mypage.html" class="now">회원정보</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-caret-right"></i>
+            <a href="history.html">이용내역</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-caret-right"></i>
+            <a href="chargePoint.html">충전하기</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="cont">
+        <h1>회원정보</h1>
+        <div>
+          <div class="left">
+            <i class="fa-solid fa-user"></i>
+            <!--수정 불가능한 value-->
+            <h3>Username 표시</h3>
+            <h3>Birthday 표시// 2000/02/ 04</h3>
+          </div>
+          <ul class="right">
+            <p>Information</p>
+            <!--action="mypage_update.php"구현필요-->
+            <form action="" method="post">
+              <div>
+                <label for="ID"><i class="fa-solid fa-id-card"></i></label>
+                <input type="text" name="ID" id="ID" value="기존 ID 띄워놓기" required>
+                <!--value값으로 php-->
+              </div>
+              <div>
+                <!--비밀번호 앞에 3자만 표시, 나머지 ***표시-->
+                <label for="PW"><i class="fa-solid fa-lock"></i></label>
+                <input type="text" name="PW" id="PW" value="기존 PW 띄워놓기" required>
+              </div>
+              <div>
+                <label for="E-mail"><i class="fa-solid fa-envelope"></i></label>
+                <input type="text" name="E-mail" id="E-mail" value="기존 E-mail 띄워놓기" required>
+              </div>
+              <div>
+                <label for="TEL"><i class="fa-solid fa-phone"></i></label>
+                <input type="text" name="TEL" id="TEL" value="기존 TEL 띄워놓기" required>
+              </div>
+              <!--php에서 수정 완료되면 mypage.html로 location-->
+              <input type="submit" name="" id="button" value="수정하기">
+            </form>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--footer: 본문 받으면 맞춰서 수정-->
+  <footer>
+    <div>Title/Logo</div>
+    <div>
+      <p>copyright is ...</p>
+      <p>Fax/Tel. 02 - 223 -2912~5</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

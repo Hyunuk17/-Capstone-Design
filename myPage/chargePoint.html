@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="chargePoint.css">
+  <script src="https://kit.fontawesome.com/4a70d94605.js" crossorigin="anonymous"></script>
+  <script src="chargePoint.js" defer></script>
+  <title>MyPage</title>
+</head>
+
+<body>
+  <!--로그인 안되어 있으면 못 들어옴-->
+
+  <!--Section 1 : title-->
+  <header>
+    <h1>
+      <i class="fa-solid fa-car-on"></i>
+      Title
+    </h1>
+    <div class="login">
+      <a href="mypage.html"><i class="fa-solid fa-user"></i></a>
+      <!--로그아웃php로 연결해서 로그아웃 성공하면 main.html로 location-->
+      <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    </div>
+  </header>
+
+  <!--Section2 : My Page-->
+  <section>
+    <h1 class="maintitle">My Page</h1>
+    <div class="container">
+      <nav class="nav">
+        <!--ID 띄워주기-->
+        <h3><i class="fa-solid fa-user"></i>//ID//님</h3>
+        <ul>
+          <li>
+            <i class="fa-solid fa-caret-right"></i>
+            <a href="mypage.html">회원정보</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-caret-right"></i>
+            <a href="history.html">이용내역</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-caret-right"></i>
+            <a href="chargePoint.html" class="now">충전하기</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="cont">
+        <h1>충전하기</h1>
+        <div>
+          <div class="left">
+            <h3>선택하기</h3>
+            <div>
+              <input type="radio" id="1" value="10000" name="point" onclick="showValue(this)">
+              <label for="1">10,000원</label>
+            </div>
+            <div>
+              <input type="radio" id="2" value="30000" name="point" onclick="showValue(this)">
+              <label for="2">30,000원</label>
+            </div>
+            <div>
+              <input type="radio" id="3" value="50000" name="point" onclick="showValue(this)">
+              <label for="3">50,000원</label>
+            </div>
+            <div>
+              <input type="radio" id="4" value="100000" name="point" onclick="showValue(this)">
+              <label for="4">100,000원</label>
+            </div>
+
+          </div>
+          <div class="right">
+            <!--php에서결제 완료 후 history.html로 location-->
+            <form action="#" method="post" onsubmit="return checkMsg()">
+              <div class="check">
+                <label>선택한 금액 </label>
+                <input class="point" type="text" placeholder="결제할 금액을 선택하세요." required>
+              </div>
+              <div class="check">
+                <!--본인인증용 전화번호: DB와 비교해서 같아야 결제가능-->
+                <label for="tel">전화번호 인증</label>
+                <input type="text" id="tel" placeholder="' - '를 포함해서 입력하세요." required>
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" id="check" required>
+                <label for="check">위 내용을 확인, 결제에 동의합니다.</label>
+              </div>
+              <input type="submit" value="결제하기" class="btn">
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--footer: 본문 받으면 맞춰서 수정-->
+  <footer>
+    <div>Title/Logo</div>
+    <div>
+      <p>copyright is ...</p>
+      <p>Fax/Tel. 02 - 223 -2912~5</p>
+    </div>
+  </footer>
+</body>
+
+
+
+</html>

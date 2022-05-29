@@ -1,0 +1,192 @@
+:root {
+  --white-color: white;
+  --blue-color: #2f7af4;
+  --gray-color: #a4a4a4;
+  --lightgray-color: lightgray;
+  --text-color: #777;
+  --black-color: black;
+
+  --padding: 12px;
+  --large-padding: 24px;
+
+  --font-large: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: var(--font-large);
+}
+
+header {
+  background-color: var(--text-color);
+
+  position: relative;
+  color: var(--white-color);
+  height: 200px;
+  text-align: center;
+}
+
+header > h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+header .login {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: var(--padding) var(--large-padding);
+}
+header .login a {
+  color: var(--white-color);
+  text-decoration: none;
+}
+header .login i {
+  padding-left: var(--padding);
+}
+
+section {
+  height: 100%;
+  width: 1048px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.maintitle {
+  border-bottom: 1px solid var(--gray-color);
+  padding: var(--large-padding);
+}
+.container {
+  display: flex;
+  padding: var(--large-padding);
+}
+
+nav {
+  width: 200px;
+}
+
+nav > h3 {
+  color: var(--white-color);
+  padding: var(--padding);
+  background-color: var(--blue-color);
+  border: 1px solid var(--lightgray-color);
+}
+nav > h3 > i {
+  padding-right: 10px;
+}
+
+nav > ul > li {
+  padding: var(--padding);
+  list-style: none;
+  border: 1px solid var(--lightgray-color);
+  color: var(--text-color);
+}
+nav > ul > li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding-left: var(--padding);
+}
+nav > ul > li a:hover {
+  color: var(--blue-color);
+}
+nav .now {
+  color: var(--blue-color);
+}
+
+.cont {
+  width: 800px;
+  padding: 0 var(--large-padding);
+}
+
+.cont > h1 {
+  padding: var(--padding) 0;
+  border-bottom: 1px solid var(--gray-color);
+}
+
+.cont > div {
+  color: var(--text-color);
+  display: flex;
+}
+.left {
+  width: 300px;
+  padding: var(--large-padding) 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.left div {
+  margin: var(--padding);
+  border-bottom: 1px solid var(--black-color);
+  font-size: x-large;
+  padding: 6px 6px;
+}
+
+.right {
+  flex: 1;
+  padding: var(--large-padding);
+}
+.right form {
+  padding: var(--large-padding);
+}
+.right form .check {
+  margin-bottom: var(--large-padding);
+  border-bottom: 1px solid var(--black-color);
+}
+.right form .check label {
+  display: block;
+  font-size: medium;
+  padding-bottom: 6px;
+}
+.right form .check input {
+  font-size: large;
+  width: 100%;
+  border-style: none;
+  padding: var(--padding);
+  outline: none;
+  height: 40px;
+}
+.checkbox {
+  margin-bottom: var(--large-padding);
+}
+.checkbox input {
+  width: 15px;
+  height: 15px;
+}
+.point {
+  pointer-events: none;
+}
+.btn {
+  float: right;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  border-style: none;
+  width: 100px;
+  height: 40px;
+}
+footer {
+  display: flex;
+  background: #1f1f1f;
+  padding: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer > div:first-child {
+  flex: 3;
+  text-align: center;
+  color: #fff;
+}
+
+footer > div:last-child {
+  flex: 9;
+  color: #fff;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="mypage.css">
+  <script src="https://kit.fontawesome.com/4a70d94605.js" crossorigin="anonymous"></script>
+  <script src="mypage.js" defer></script>
+  <title>MyPage</title>
+</head>
+
+<body>
+  <!--로그인 안되어 있으면 못 들어옴-->
+
+  <!--Section 1 : title-->
+  <header>
+    <h1>
+      <i class="fa-solid fa-car-on"></i>
+      Title
+    </h1>
+    <div class="login">
+      <a href="mypage.html"><i class="fa-solid fa-user"></i></a>
+      <!--로그아웃php로 연결해서 로그아웃 성공하면 main.html로 location-->
+      <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    </div>
+  </header>
+
+  <!--Section2 : My Page-->
+  <section>
+    <h1 class="maintitle">My Page</h1>
+    <div class="container">
+      <nav class="nav">
+        <!--ID 띄워주기-->
+        <h3><i class="fa-solid fa-user"></i>//ID//님</h3>
+        <ul>
+          <li>
+            <i class="fa-solid fa-caret-right"></i>
+            <a href="mypage.html" class="now">회원정보</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-caret-right"></i>
+            <a href="history.html">이용내역</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-caret-right"></i>
+            <a href="chargePoint.html">충전하기</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="cont">
+        <h1>회원정보</h1>
+        <div>
+          <div class="left">
+            <i class="fa-solid fa-user"></i>
+            <!--수정 불가능한 value-->
+            <h3>Username 표시</h3>
+            <h3>Birthday 표시// ex) 2000/02/ 04</h3>
+          </div>
+          <ul class="right">
+            <p>Information</p>
+            <li>ID : <span>여기에 표시<i class="fa-solid fa-id-card"></i></span></li>
+            <!--비밀번호 앞에 3자만 표시, 나머지 ***표시-->
+            <li>PW : <span>앞에 3자만 나머지 ***표시<i class="fa-solid fa-lock"></i></span></li>
+            <li>E-MAIL : <span>여기에 표시<i class="fa-solid fa-envelope"></i></span></li>
+            <li>TEL : <span>여기에 표시<i class="fa-solid fa-phone"></i></span></li>
+            <button class="openModal">회원탈퇴</button>
+            <button onclick="location='mypage_update.html'">수정하기</button>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--footer: 본문 받으면 맞춰서 수정-->
+  <footer>
+    <div>Title/Logo</div>
+    <div>
+      <p>copyright is ...</p>
+      <p>Fax/Tel. 02 - 223 -2912~5</p>
+    </div>
+  </footer>
+
+  <!--Modal : 탈퇴하기-->
+  <div class="modal">
+    <i class="fa-solid fa-xmark exit"></i>
+    <form action="" method="post">
+      <h3>정말로 탈퇴하시겠습니까?</h3>
+      <div>
+        <label for="pw">비밀번호</label>
+        <!--비밀번호 입력해서 데이터베이스와 비교-->
+        <input type="text" id="pw" placeholder="비밀번호를 입력하세요." required>
+      </div>
+      <div>
+        <label for="tel">전화번호 확인</label>
+        <!--전화번호 입력해서 데이터베이스와 맞으면 탈퇴성공-->
+        <input type="text" id="tel" placeholder="전화번호를 입력하세요" required>
+      </div>
+      <!--php에서 탈퇴 성공하면 메인으로 location // 실패하면 alert('실패했습니다.') 출력 후 mypage.html로 복귀-->
+      <input type="submit" value="탈퇴하기" class="btn">
+    </form>
+  </div>
+
+</body>
+
+</html>
