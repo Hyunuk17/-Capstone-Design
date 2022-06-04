@@ -1,5 +1,4 @@
 :root {
-  --purple-color: purple;
   --white-color: white;
   --lightgray-color: #777;
 
@@ -15,6 +14,7 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 body {
+  height: 100%;
 }
 .main1 {
   padding: var(--large-padding);
@@ -24,14 +24,13 @@ body {
     rgba(146, 168, 209, 1) 100%
   );
   color: var(--white-color);
-  margin-bottom: var(--padding);
 }
 
 h3,
 h1 {
   width: 100%;
   text-align: center;
-  padding-bottom: var(--padding);
+  padding: 6px 0;
 }
 
 .main1 .card {
@@ -43,8 +42,6 @@ h1 {
   margin: 0 auto;
   margin-bottom: var(--padding);
   border-radius: 20px;
-
-  color: black;
 }
 
 .main1 .card > li {
@@ -67,7 +64,7 @@ h1 {
   padding-left: 4px;
 }
 .main1 .card > li > h1 > i:hover {
-  opacity: 0.6;
+  filter: brightness(85%);
 }
 
 .main2 {
@@ -77,7 +74,6 @@ h1 {
   padding: var(--large-padding);
   background-color: white;
   color: var(--lightgray-color);
-
   border-top: none;
 }
 .main2 div {
@@ -85,6 +81,7 @@ h1 {
 }
 .main2 .select,
 .main2 .select2,
+.main2 .select3,
 .bModal .bSelect {
   padding: var(--padding);
   position: relative;
@@ -92,6 +89,7 @@ h1 {
 
 .main2 .choice,
 .main2 .choice2,
+.main2 .choice3,
 .bModal .bChoice {
   width: 100%;
   height: 50px;
@@ -107,18 +105,21 @@ h1 {
 }
 
 .main2 .choice > span,
-.main2 .choice2 > span {
+.main2 .choice2 > span,
+.main2 .choice3 > span {
   width: 100%;
 }
 .main2 .choice > i,
-.main2 .choice2 > i {
+.main2 .choice2 > i,
+.main2 .choice3 > i {
   flex: 1;
   width: 100%;
-  color: black;
+  color: var(--lightgray-color);
 }
 
 .main2 .select .optionList,
 .main2 .select2 .optionList,
+.main2 .select3 .optionList,
 .bModal .bSelect .optionList {
   margin-top: var(--padding);
   width: 100%;
@@ -131,6 +132,7 @@ h1 {
 
 .select.active .optionList,
 .select2.active .optionList,
+.select3.active .optionList,
 .bSelect.active .optionList {
   display: block;
   border-radius: 10px;
@@ -138,6 +140,7 @@ h1 {
 
 .main2 .select .option,
 .main2 .select2 .option2,
+.main2 .select3 .option4,
 .bModal .option3 {
   color: var(--lightgray-color);
   padding: var(--large-padding);
@@ -152,18 +155,25 @@ h1 {
 
 .main2 .select .option:hover,
 .main2 .select2 .option2:hover,
+.main2 .select3 .option4:hover,
 .option3:hover {
   color: black;
 }
 
 .main2 .select .option:last-child,
 .main2 .select2 .option2:last-child,
+.main2 .select3 .option4:last-child,
 .option3:last-child {
   border-bottom: 0 none;
 }
 
+.compare {
+  text-align: center;
+  margin-top: var(--padding);
+}
+
 .main2 .pay {
-  margin: var(--large-padding) 0;
+  margin-top: var(--large-padding);
   width: 100%;
   height: 50px;
   background-color: #009a7d;
@@ -175,13 +185,13 @@ h1 {
 }
 
 .main2 .pay:hover {
-  opacity: 0.6;
+  filter: brightness(85%);
 }
 
 .modal,
 .bModal {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  bottom: 0;
   left: 0;
   display: none;
   background-color: rgba(0, 0, 0, 0.7);
@@ -205,20 +215,27 @@ h1 {
 
 .modal h2,
 .bModal h2 {
-  width: 100%;
-  display: block;
-  /*border-bottom: 1px solid var(--lightgray-color);*/
+  width: 140px;
+  margin: 0 auto;
+  padding-bottom: 6px;
+  margin-bottom: var(--padding);
+  border-bottom: 1px solid var(--lightgray-color);
   font-size: 16px;
+  text-align: center;
 }
 .modal h3,
 .bModal h3 {
   width: 100%;
   padding: var(--large-padding);
-  /*border-bottom: 1px solid var(--lightgray-color);*/
   font-size: 12px;
   font-weight: 400;
 }
-
+.modal form input,
+.bModal form input {
+  margin-top: 2px;
+  padding: 6px;
+  border: 1px solid var(--lightgray-color);
+}
 .modal ul,
 .bModal ul {
   display: flex;
@@ -226,9 +243,17 @@ h1 {
   font-size: 16px;
 }
 
+.modal form div,
+.bModal form div {
+  pointer-events: none;
+  margin-bottom: var(--padding);
+}
+
+.modal .ul input,
 .modal li,
-.bModal li {
-  background-color: var(--lightgray-color);
+.bModal li,
+.bModal .yes {
+  margin-top: var(--large-padding);
   width: 80px;
   height: 30px;
   color: var(--white-color);
@@ -237,9 +262,20 @@ h1 {
   justify-content: center;
   align-items: center;
   font-weight: 500;
+  border-style: none;
+  font-size: medium;
+  padding: 0;
 }
 
-.modal li:hover,
-.bModal .bCon > li:hover {
+.yes {
   background-color: #009a7d;
+}
+.yes:hover {
+  filter: brightness(85%);
+}
+.no {
+  background-color: #d0312d;
+}
+.no:hover {
+  filter: brightness(85%);
 }

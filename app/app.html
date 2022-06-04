@@ -15,56 +15,79 @@
 <body>
   <!--Section-->
   <section class="main1">
-    <h3 class="title">title</h3>
+    <!--Title 입력하기-->
+    <h3 class="title">Title</h3>
     <h1>Payment Method</h1>
     <ul class="card">
       <li>
+        <h3>NAME : </h3>
+        <!--NAME DB에서 띄우기 -->
+        <h1 class="id">KIM</h1>
+      </li>
+      <li>
         <h3>ID : </h3>
-        <h1 class="id">ABCD123<i class="fa-solid fa-pen"></i></h1>
+        <!--ID DB에서 띄우기 : ID이모지 지우기?-->
+        <h1 class="id">ABCD123</h1>
       </li>
       <li>
         <h3>Balance : </h3>
-        <h1 class="">30,000<i class="fa-solid fa-circle-plus balance" onclick="balance()"></i></h1>
+        <!--잔액값 DB에서 띄우기-->
+        <h1 class="balance">30000<i class="fa-solid fa-circle-plus " onclick="balance()"></i></h1>
       </li>
     </ul>
   </section>
 
   <!--Section-->
   <section class="main2">
+    <!--Location-->
     <div class="location">
       <span>Location</span>
       <div class="select">
         <button class="choice"><span>선택하기</span><i class="fa-solid fa-sort-down"></i></button>
 
         <ul class="optionList">
-          <li class="option">1. 충전소1</li>
-          <li class="option">2. 충전소2</li>
-          <li class="option">3. 충전소3</li>
+          <!--DB에서 Location에 목록 해당하는 애들로 채우기-->
+          <li class="option" value="1">지역1</li>
+          <li class="option" value="2">지역2</li>
+          <li class="option" value="3">지역3</li>
         </ul>
       </div>
     </div>
 
-    <div class="charge">
-      <span>Charge</span>
-      <div class="select2">
-        <button class="choice2"><span>선택하기</span><i class="fa-solid fa-sort-down"></i></button>
+    <!--Charger no-->
+    <div class="charger">
+      <span>Charger</span>
+      <div class="select3">
+        <button class="choice3"><span>선택하기</span><i class="fa-solid fa-sort-down"></i></button>
 
         <ul class="optionList">
-          <li class="option2">&#8361; 10,000</li>
-          <li class="option2">&#8361; 20,000</li>
-          <li class="option2">&#8361; 30,000</li>
+          <!--DB에서 Charger에 목록 해당하는 애들로 채우기-->
+          <li class="option4" value="1">기기1</li>
+          <li class="option4" value="2">기기2</li>
+          <li class="option4" value="3">기기3</li>
         </ul>
       </div>
     </div>
 
+    <!--Money-->
+    <div class="money">
+      <span>Money</span>
+      <div class="select2">
+        <button class="choice2" value="0"><span>선택하기</span><i class="fa-solid fa-sort-down"></i></button>
 
-    <!--    <div class="payment">
-      <span>Payment</span>
-      <ul>
-        <li value="가">가</li>
-        <li value="나">나</li>
-      </ul>
-    </div>-->
+        <ul class="optionList">
+          <!--DB에서 가격목록 띄우기-->
+          <li class="option2" value="10000">&#8361; 10000</li>
+          <li class="option2" value="30000">&#8361; 30000</li>
+          <li class="option2" value="50000">&#8361; 50000</li>
+          <li class="option2" value="100000">&#8361; 100000</li>
+        </ul>
+      </div>
+    </div>
+
+    <!--잔액비교-->
+    <p class="compare">결제를 진행할 수 있습니다.</p>
+    <!--Button-->
     <button class="pay" onclick="pay()">Pay</button>
   </section>
 
@@ -72,11 +95,32 @@
   <div class="modal">
     <div class="confirm">
       <h2>결제하시겠습니까?</h2>
-      <h3>환불할 수 없습니다.</h3>
-      <ul class="">
-        <li class="yes" onclick="yes(this)">Confirm</li>
-        <li class="no" onclick="no(this)">Cancel</li>
-      </ul>
+      <!--php에서 결제 후 현재 페이지로 원복-->
+      <form action="#?" id="frm" onsubmit="return false">
+        <div>
+          <label for="Location">Location</label>
+          <input type="text" name="" id="Location" class="locationValue" placeholder="지역?기기?를 선택하세요." required>
+        </div>
+        <div>
+          <label for="Charger">Charger</label>
+          <input type="text" name="" id="Charger" class="chargerValue" placeholder="기기를 선택하세요." required>
+        </div>
+        <div>
+          <label for="Money">Money</label>
+          <input type="text" name="" id="Money" class="moneyValue" placeholder="금액을 선택하세요." required>
+        </div>
+        <!--DB와 대조해서 맞아야 결제-->
+        <label for="Tel">전화번호 인증</label>
+        <input type="text" name="" id="Tel" class="tel" placeholder="전화번호를 입력하세요." required>
+
+
+        <!--button-->
+        <ul class="ul">
+          <input type="submit" class=" yes" value="Confirm" onclick="yes(this)">
+          <!--cancel/modal-off-->
+          <li class="no" onclick="no(this)">Cancel</li>
+        </ul>
+      </form>
     </div>
   </div>
 
@@ -84,20 +128,38 @@
   <!--Balance Modal-->
   <div class="bModal">
     <div class="bConfirm">
-      <h2>충전할 금액을 선택하세요</h2>
+      <h2>잔액 충전하기</h2>
       <div class="bSelect">
         <button class="bChoice"><span>선택하기</span><i class="fa-solid fa-sort-down"></i></button>
 
         <ul class="optionList">
-          <li class="option3">&#8361; 10,000</li>
-          <li class="option3">&#8361; 20,000</li>
-          <li class="option3">&#8361; 30,000</li>
+          <!--DB에서 가격목록 띄우기-->
+          <li class="option3" value="10000">&#8361; 10000</li>
+          <li class="option3" value="30000">&#8361; 30000</li>
+          <li class="option3" value="50000">&#8361; 50000</li>
+          <li class="option3" value="100000">&#8361; 100000</li>
         </ul>
       </div>
-      <ul class="bCon">
-        <li class="yes" onclick="yes(this)">Confirm</li>
-        <li class="no" onclick="no(this)">Cancel</li>
-      </ul>
+
+      <!--php에서 결제 후 현재 페이지로 원복-->
+      <form action="#" method="post">
+        <div>
+          <!--충전할 금액-->
+          <label for="">선택한 금액</label>
+          <input type="text" placeholder="금액을 선택하세요." class="chargePointValue" required>
+        </div>
+
+        <!--전화번호 인증 : DB와 비교해서 안맞으면 메시지 띄우고 원복-->
+        <label for="">전화번호 확인</label>
+        <input type="text" name="" id="" placeholder="전화번호를 입력하세요." required>
+
+        <!--충전이니까 sign '+' 넘겨주기?-->
+
+        <ul class="bCon">
+          <input type="submit" class="yes" onclick="yes(this)" value="Confirm">
+          <li class="no" onclick="no(this)">Cancel</li>
+        </ul>
+      </form>
     </div>
   </div>
 
